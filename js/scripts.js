@@ -53,7 +53,11 @@ function showMessages(){
         */
     });
 
+    html += '<div class="lastMessage"></div>';
+
     //console.log(html);
     elemento.innerHTML = html;
+    const lastMessage = document.querySelector('.lastMessage');
+    lastMessage.scrollIntoView();
 
 }
