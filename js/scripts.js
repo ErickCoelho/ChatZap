@@ -144,3 +144,28 @@ function showMessages(){
     lastMessage.scrollIntoView();
 
 }
+
+
+function sendMessage(){
+    const text = document.getElementById('text').value;
+    if(text == "")
+        alert("Digite algo antes de enviar");
+    else{
+        alert(text);
+        const promiseSendMessage = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages",
+        {
+            from: userName,
+            to: "Todos",
+            text: text,
+            type: "message" // ou "private_message" para o bônus
+        }
+        );
+
+        promiseSendMessage.catch(sendMessageError);
+
+    }
+}
+
+function sendMessageError(){
+    alert("Send Message Error!!!");
+}

@@ -124,11 +124,15 @@ img{
     height: 35%;
 }
 
-.messagePlaceholder{
+.sendMessage textarea{
     color: #9b9b9b;
     font-size: 18px;
     font-family: Roboto;
     font-style: italic;
+    border: none;
+    width: 100%;
+    height: auto;
+    margin: 0 10px 0 0;
 }
 
 .messageSending{
