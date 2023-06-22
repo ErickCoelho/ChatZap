@@ -31,12 +31,14 @@ function login(){
 
 function successLogin(){
     getMessages();
-    //setInterval(getMessages, 3000);
+    setInterval(getMessages, 3000);
     setInterval(conectionStatus, 5000);
 }
 
 function errorLogin(error){
     console.log("Ococrreu um erro no Login! Código: "+ error.data.status);
+    userName = prompt("Falha no Login, insira outro nome:");
+    login();
 }
 
 function conectionStatus(){
