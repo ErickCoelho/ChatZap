@@ -162,10 +162,15 @@ function sendMessage(){
         );
 
         promiseSendMessage.catch(sendMessageError);
+        promiseSendMessage.then(sendMessageSuccess);
 
     }
 }
 
 function sendMessageError(){
     alert("Send Message Error!!!");
+}
+
+function sendMessageSuccess(){
+    document.getElementById('text').value = "";
 }
