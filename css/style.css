@@ -153,6 +153,22 @@ img{
     height: fit-content;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+/*.message.typeMessage{
+}*/
+
+.message.typeStatus{
+    background-color: #DCDCDC;
+}
+
+.message.typePrivate{
+    background-color: #FFDEDE;
+}
+
+.message.typeOther{
+    background-color: red;
 }
 
 .hour{
