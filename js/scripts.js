@@ -36,7 +36,7 @@ function successLogin(){
 }
 
 function errorLogin(error){
-    console.log("Ococrreu um erro no Login! Código: "+ error.data.status);
+    //console.log("Ococrreu um erro no Login! Código: "+ error.response.status);
     userName = prompt("Falha no Login, insira outro nome:");
     login();
 }
@@ -53,7 +53,12 @@ function conectionStatus(){
 }
 
 function conectionStatusError(error){
-    console.log("Ococrreu um erro na Conexão! Código: "+ error.data.status);
+    //alert("ERRO");
+    //console.log("Ococrreu um erro na Conexão! Código: "+ error.response.status);
+    userName = prompt("Seção finalizada, insira novamente seu nome:");
+    clearInterval(conectionStatus);
+    clearInterval(getMessages);
+    login();
 }
 
 function getMessages(){
@@ -63,7 +68,8 @@ function getMessages(){
 }
 
 function errorMessages(error){
-    console.log("Ococrreu um erro no carregamento das mensagens! Código: "+ error.data.status);
+    //alert("Ococrreu um erro no carregamento das mensagens! Código: "+ error.response.status);
+    //console.log("Ococrreu um erro no carregamento das mensagens! Código: "+ error.response.status);
 }
 
 function loadMessages(response){
