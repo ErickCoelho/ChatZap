@@ -2,12 +2,170 @@
     box-sizing: border-box;
 }
 
-/* Estilos para telas maiores */
+body{
+ background-color: rgb(81, 81, 81);
+}
 
 
+.container{
+    min-width: 200px;
+    max-width: 800px;
+    height: 100vh;
+    margin: auto;
+    padding: 85px 0;
+    background-color: #F3F3F3;
+}
 
-/* Estilos gerais aqui */
+.sideBarBG{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 9;
+}
 
+.sideBar{
+    background-color: white;
+    width: 259px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 99;
+    border-radius: 15px 0 0 15px ;
+    padding: 0 20px;
+}
+
+.displaynone{
+    display: none;
+}
+
+.sideBar .title{
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+}
+
+.sideBar ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.sideBar ul li .name {
+    color: #000;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-left: 10px;
+}
+
+.sideBar ul li img {
+    height: 25px;
+}
+
+.header{
+    min-width: 200px;
+    max-width: 800px;
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    background-color: #FFF;
+    box-shadow: 0px 6px 14px -3px rgba(0,0,0,0.43);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo{
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo div{
+    font-size: xx-large;
+    font-family: Roboto;
+    font-weight: 800;
+}
+
+img{
+    height: 65%;
+    width: auto;
+}
+
+.sendMessage{
+    min-width: 200px;
+    max-width: 800px;
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    background-color: #FFF;
+    box-shadow: 0px 6px 14px 3px rgba(0,0,0,0.43);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.sendMessage img{
+    height: 35%;
+}
+
+.messagePlaceholder{
+    color: #9b9b9b;
+    font-size: 18px;
+    font-family: Roboto;
+    font-style: italic;
+}
+
+.messageSending{
+    color: #c2c2c2;
+    font-size: 14px;
+    font-family: Roboto;
+    line-height: 25px;
+}
+
+.messagesContainer{
+    height: 100%;
+}
+
+.message{
+    background-color: white;
+    padding: 10px 8px;
+    margin: 3px 0;
+    border-radius: 2px;
+    width: 100%;
+    min-height: 40px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.hour{
+    color: #AAA;
+    font-size: 14px;
+    font-family: Roboto;
+}
+
+.text{
+    color:black;
+    font-size: 14px;
+    font-family: Roboto;
+    margin-left: 5px;
+}
 
 
 /* Estilos para telas menores */

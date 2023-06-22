@@ -4,12 +4,74 @@
     <title>This a HTML model</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This a HTML page model.</p>
+    <div class="container">
+
+        <div class="sideBarBG displaynone" onclick="closeSideBar()"></div>
+        <div class="sideBar displaynone">
+            <div class="title">Escolha um contato para enviar mensagem:</div>
+            <ul>
+                <li>
+                    <img src="assets/people 1.png">
+                    <div class="name">Todos</div>
+                </li>
+                <li>
+                    <img src="assets/person-circle 1.png">
+                    <div class="name">João</div>
+                </li>
+                <li>
+                    <img src="assets/person-circle 1.png">
+                    <div class="name">Maria</div>
+                </li>
+            </ul>
+            <div class="title">Escolha a visibilidade:</div>
+            <ul>
+                <li>
+                    <img src="assets/lock-open 1.png">
+                    <div class="name">Público</div>
+                </li>
+                <li>
+                    <img src="assets/lock-open 1.png">
+                    <div class="name">Reservadamente</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="header">
+            <div class="logo">
+                <img src="assets/messenger-icon.png">
+                <div>ChatZap</div>
+            </div>
+            <img src="assets/people 1.png" onclick="openSideBar()">
+        </div>
+
+        <div class="messagesContainer">
+            <div class="message">
+                <div class="hour">(09:18:22)</div>
+                <div class="text">Olá!</div>
+            </div>
+            <div class="message">
+                <div class="hour">(09:18:22)</div>
+                <div class="text">Olá!</div>
+            </div>
+        </div>
+
+
+        <div class="sendMessage">
+            <div class="messageContainer">
+                <div class="messagePlaceholder">Escreva aqui...</div>
+                <div class="messageSending">Enviando para Maria (reservadamente)</div>
+            </div>
+            <img src="assets/Vector.png">
+        </div>
+
+    </div>
 
     <!--<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
