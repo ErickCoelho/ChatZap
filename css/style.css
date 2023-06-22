@@ -140,6 +140,7 @@ img{
 
 .messagesContainer{
     height: 100%;
+    overflow-y: scroll;
 }
 
 .message{
@@ -165,6 +166,10 @@ img{
     font-size: 14px;
     font-family: Roboto;
     margin-left: 5px;
+}
+
+.text strong{
+    font-weight: bold;
 }
 
 

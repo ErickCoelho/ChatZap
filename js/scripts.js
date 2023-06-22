@@ -41,7 +41,7 @@ function showMessages(){
         html += `
         <div class="message">
             <div class="hour">(${message.time})</div>
-            <div class="text">${message.from} para ${message.to}: ${message.text}</div>
+            <div class="text"><strong>${message.from}</strong> para <strong>${message.to}</strong>: ${message.text}</div>
         </div>
         `;
         /*
