@@ -11,3 +11,24 @@ function closeSideBar(){
     const elemento2 = document.querySelector(".sideBar");
     elemento2.classList.add("displaynone");
 }
+
+getMessages();
+//setInterval(getMessages, 3000);
+
+function getMessages(){
+    const messagesPromise = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages');
+    messagesPromise.then(showMessages);
+    messagesPromise.catch(errorMessages);
+}
+
+function errorMessages(error){
+    console.log("Ococrreu um erro no carregamento das mensagens! Código: "+ error.data.status);
+}
+
+function showMessages(response){
+    console.log(response.data);
+    const messages = response.data;
+    const elemento = document.querySelector("messagesContainer");
+    //elemento.innerHTML += `a`;
+
+}
