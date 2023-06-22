@@ -131,6 +131,13 @@ img{
     font-style: italic;
 }
 
+.messageSending{
+    color: #c2c2c2;
+    font-size: 14px;
+    font-family: Roboto;
+    line-height: 25px;
+}
+
 .messagesContainer{
     height: 100%;
 }
