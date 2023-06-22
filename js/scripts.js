@@ -189,7 +189,7 @@ function showMessages(){
                 <div class="text"><strong>${message.from}</strong> ${message.text}</div>
             </div>
             `;
-        else if(message.type == "private_message" && (message.to == userName || message.to == "Todos"))
+        else if(message.type == "private_message" && (message.to == userName || message.to == "Todos" || message.from == userName))
             html+= `
             <div class="message typePrivate">
                 <div class="hour">(${message.time})</div>
