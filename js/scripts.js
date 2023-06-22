@@ -3,6 +3,8 @@ function openSideBar(){
     elemento1.classList.remove("displaynone");
     const elemento2 = document.querySelector(".displaynone");
     elemento2.classList.remove("displaynone");
+    getParticipants();
+    setInterval(getParticipants, 10000);
 }
 
 function closeSideBar(){
@@ -10,10 +12,94 @@ function closeSideBar(){
     elemento1.classList.add("displaynone");
     const elemento2 = document.querySelector(".sideBar");
     elemento2.classList.add("displaynone");
+    clearInterval(getParticipants);
 }
+
+function getParticipants(){
+    const promiseParticipants = axios.get("https://mock-api.driven.com.br/api/v4/uol/participants");
+    promiseParticipants.then(loadParticipants);
+}
+
+function loadParticipants(response){
+    participantsList = response.data;
+    console.log(participantsList);
+    showParticipants();
+}
+
+function showParticipants(){
+    const elemento = document.querySelector(".sideBar ul")
+    let html = '';
+    html = `
+    <li onclick="selectParticipant(this)">
+        <div>
+            <img src="assets/people 1.png">
+            <div class="name">Todos</div>
+        </div>
+        <ion-icon name="checkmark" 
+        `;
+        if(recipient == "Todos")
+            html += `
+            ></ion-icon>
+            </li>
+            `;
+        else
+        html += `
+            class="displaynone"></ion-icon>
+            </li>
+            `;
+
+
+    participantsList.forEach(participant => {
+        //console.log(participant.name);
+        if(participant.name != userName){
+            html += `
+            <li onclick="selectParticipant(this)">
+                <div>
+                    <img src="assets/person-circle 1.png">
+                    <div class="name">${participant.name}</div>
+                </div>
+                <ion-icon name="checkmark" 
+            `;
+            if(participant.name == recipient)
+            html += `
+                ></ion-icon>
+                </li>
+                `;
+            else
+                html += `
+                class="displaynone"></ion-icon>
+                </li>
+                `;
+        }
+    });
+
+    console.log(html);
+    elemento.innerHTML = html;
+
+}
+
+function selectParticipant(elemento){
+    const name = elemento.querySelector(".name");
+    nameString = name.innerHTML;
+    /*if(recipient == nameString){
+        recipient = "Todos";
+    }
+    else{
+        recipient = nameString;
+    }*/
+    recipient = nameString;
+
+    //const iconElement = elemento.children[1];
+    //iconElement.classList.remove("displaynone");
+    showParticipants();
+
+}
+
 
 const userName = prompt("Qual é o seu nome?");
 let messagesList = [];
+let recipient = "Todos";
+let participantsList = [];
 
 login();
 
@@ -151,11 +237,11 @@ function sendMessage(){
     if(text == "")
         alert("Digite algo antes de enviar");
     else{
-        alert(text);
+        //alert(text);
         const promiseSendMessage = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages",
         {
             from: userName,
-            to: "Todos",
+            to: recipient,
             text: text,
             type: "message" // ou "private_message" para o bônus
         }
@@ -174,3 +260,4 @@ function sendMessageError(){
 function sendMessageSuccess(){
     document.getElementById('text').value = "";
 }
+
