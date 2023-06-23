@@ -1,16 +1,23 @@
-const userName = prompt("Qual é o seu nome?");
+let userName; // prompt("Qual é o seu nome?");
 let messagesList = [];
 let recipient = "Todos";
 let participantsList = [];
 let typeMessage = "message";
 
-login();
 
+function loginPage(){
+    const elemento = document.querySelector(".loginPage");
+    alert(elemento.querySelector("input").value);
+    userName = elemento.querySelector("input").value;
+    
+    elemento.classList.add("displaynone");
+    login();
+}
 
 function openSideBar(){
-    const elemento1 = document.querySelector(".displaynone");
+    const elemento1 = document.querySelector(".sideBar");
     elemento1.classList.remove("displaynone");
-    const elemento2 = document.querySelector(".displaynone");
+    const elemento2 = document.querySelector(".sideBarBG");
     elemento2.classList.remove("displaynone");
     getParticipants();
     setInterval(getParticipants, 10000);
@@ -139,7 +146,7 @@ function successLogin(){
 function errorLogin(error){
     //console.log("Ococrreu um erro no Login! Código: "+ error.response.status);
     userName = prompt("Falha no Login, insira outro nome:");
-    login();
+    loginPage();
 }
 
 function conectionStatus(){
