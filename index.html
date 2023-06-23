@@ -32,19 +32,19 @@
             </ul>
             <div class="title">Escolha a visibilidade:</div>
             <ul>
-                <li>
+                <li onclick="selectVisibility(this)">
                     <div>
                         <img src="assets/lock-open 1.png">
                         <div class="name">Público</div>
                     </div>
-                    <ion-icon name="checkmark" class="displaynone"></ion-icon>
+                    <ion-icon name="checkmark" id="checkVisibility1"></ion-icon>
                 </li>
-                <li>
+                <li onclick="selectVisibility(this)">
                     <div>
                         <img src="assets/lock-open 1.png">
                         <div class="name">Reservadamente</div>
                     </div>
-                    <ion-icon name="checkmark" class="displaynone"></ion-icon>
+                    <ion-icon name="checkmark" id="checkVisibility2" class="displaynone"></ion-icon>
                 </li>
             </ul>
         </div>

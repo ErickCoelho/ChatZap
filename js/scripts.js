@@ -1,3 +1,12 @@
+const userName = prompt("Qual é o seu nome?");
+let messagesList = [];
+let recipient = "Todos";
+let participantsList = [];
+let typeMessage = "message";
+
+login();
+
+
 function openSideBar(){
     const elemento1 = document.querySelector(".displaynone");
     elemento1.classList.remove("displaynone");
@@ -95,13 +104,19 @@ function selectParticipant(elemento){
 
 }
 
+function selectVisibility(elemento){
+    const div1 = document.getElementById('checkVisibility1');
+    div1.classList.add("displaynone");
+    const div2 = document.getElementById('checkVisibility2');
+    div2.classList.add("displaynone");
 
-const userName = prompt("Qual é o seu nome?");
-let messagesList = [];
-let recipient = "Todos";
-let participantsList = [];
+    elemento.children[1].classList.remove('displaynone');
+    if(elemento.children[0].children[1].innerHTML == "Público")
+        typeMessage = "message";
+    else
+        typeMessage = "private_message";
+}
 
-login();
 
 function login(){
     const promiseLogin = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants" ,
@@ -243,7 +258,7 @@ function sendMessage(){
             from: userName,
             to: recipient,
             text: text,
-            type: "message" // ou "private_message" para o bônus
+            type: typeMessage // ou "private_message" para o bônus
         }
         );
 
